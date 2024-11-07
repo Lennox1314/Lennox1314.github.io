@@ -1,0 +1,124 @@
+  /* Styling for gear loadout*/
+  .gear-wrapper{
+    position: relative;
+    width: 100%;                /* Ensure it takes up the width of its parent */
+    max-width: 500px;           
+    height: 550px;              
+    margin: 0 auto;             /* Center the container */
+    display: grid;    /* Use grid layout */
+    grid-template-columns: repeat(5, 1fr);  /* 8 equal columns */
+    grid-template-rows: repeat(10, 1fr);     /* 8 equal rows */
+    grid-gap: 15px;   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    place-items: center;
+    padding: 5px;
+}
+.weapon-wrapper{
+    position: relative;
+    width: 100%;                /* Ensure it takes up the width of its parent */
+    max-width: 500px;           
+    height: 75px;              
+    margin: 0 auto;             /* Center the container */
+    display: grid;    /* Use grid layout */
+    grid-template-columns: repeat(10, 1fr);  /* 10 equal columns */
+    grid-template-rows: repeat(1, 1fr);     /* 1 equal rows */
+    grid-gap: 15px;   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    place-items: center;
+    padding: 5px;
+}
+.image-holder{
+    background-image: url('../../public/clericImages/gearImage.png');
+    max-width: 500px;
+    height: 650px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.equipment-image {
+    width: 100%;                /* Make the image fill the container width */
+    height: auto;               /* Maintain the image's aspect ratio */
+    display: block;             /* Prevent any extra space around the image */
+}
+
+/* Each equipment icon */
+.equipment {
+    display: flex;               /* Use flexbox for centering */
+    justify-content: center;     /* Horizontally center the icon */
+    align-items: center;         /* Vertically center the icon */
+    position: relative;          /* Ensure tooltip is positioned correctly */
+    width: 50px;                 /* Size of the skill icons */
+    height: 50px;                /* Size of the skill icons */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    border: 3px solid white;
+}
+.inner-grid{
+    display: grid;
+    position: relative;
+    grid-gap: 15px;
+    place-items: center;
+    grid-template-columns: repeat(10, 1fr);
+}
+.equipment:hover .equipment-tooltip{
+    visibility: visible;
+    opacity: 1;
+}
+.equipment:hover .weapon-tooltip{
+    visibility: visible;
+    opacity: 1;
+}
+.equipment-tooltip {
+    position: absolute;
+    bottom: -200px;                  /* Position the tooltip above the icon */
+    left: 250px;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;          /* Hide by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 325px;            /* Max width of the tooltip */
+    white-space: normal;         /* Allow the text to wrap and break */
+    word-wrap: break-word;       /* Break words if they're too long */
+    z-index: 1000;
+}
+.weapon-tooltip {
+    position: absolute;
+    bottom: 80px;                  /* Position the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;          /* Hide by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 325px;            /* Max width of the tooltip */
+    white-space: normal;         /* Allow the text to wrap and break */
+    word-wrap: break-word;       /* Break words if they're too long */
+    z-index: 1000;
+}
+.container{
+    content: "";
+    display: table;
+    clear: both;
+    width: 100%;
+
+}
+.left{
+    float: left;
+    width: 50%;
+
+}
+.right{
+    float: right;
+    width: 60%;
+}
