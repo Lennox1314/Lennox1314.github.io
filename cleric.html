@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cleric Class Guide for Enveus">
+    <title>Cleric Class Guide - MMORPG</title>
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding-top: 20px;
+}
+
+/* Header Styling */
+header {
+    background-color: #2e3a47;
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin-top: 10px;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #333333;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+
+}
+
+nav ul li a:hover {
+    color: #fff881;
+}
+
+/* Main Content Styling */
+main {
+    max-width: 1500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style: inside;
+    margin-left: 20px;
+}
+
+ul li {
+    font-size: .8rem;
+    margin-bottom: 10px;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 30px;
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+h2 {
+    text-align: center;
+}
+
+/* Button-style links */
+a.button {
+    display: inline-block;
+    background-color: #fcf459;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+a.button:hover {
+    background-color: #ffffe3;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #2e3a47;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    ul li {
+        font-size: 1rem;
+    }
+}
+/* Button Styling */
+ul.build-buttons {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+ul.build-buttons li {
+    margin-right: 20px;
+}
+
+ul.build-buttons li button {
+    background-color: #fcf459;
+    color: Gray;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+ul.build-buttons li button:hover {
+    background-color: #fdfdc8;
+}
+
+/* Build Content Styling */
+#build-content {
+    margin-top: 20px;
+}
+
+.build-section {
+    display: none; /* Hide all sections by default */
+}
+
+.build-section.active {
+    display: block; /* Show active section */
+}
+
+h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+ul {
+    margin-left: 20px;
+}
+
+ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* style for build images */
+/* Main container for the skill tree image */
+.skilltree-wrapper {
+    position: relative;
+    width: 100%;                /* Ensure it takes up the width of its parent */
+    max-width: 1400px;           
+    height: 800px;              
+    margin: 0 auto;             /* Center the container */
+    display: grid;    /* Use grid layout */
+    grid-template-columns: repeat(17, 1fr);  /* 17 equal columns */
+    grid-template-rows: repeat(17, 1fr);     /* 17 equal rows */
+    grid-gap: 15px;   
+    background-image: url('clericImages/clericBackground.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    place-items: center;
+
+}
+
+/* Skill tree background image */
+.skilltree-image {
+    width: 100%;                /* Make the image fill the container width */
+    height: auto;               /* Maintain the image's aspect ratio */
+    display: block;             /* Prevent any extra space around the image */
+}
+
+/* Each skill icon */
+.skill {
+    display: flex;               /* Use flexbox for centering */
+    justify-content: center;     /* Horizontally center the icon */
+    align-items: center;         /* Vertically center the icon */
+    position: relative;          /* Ensure tooltip is positioned correctly */
+    width: 50px;                 /* Size of the skill icons */
+    height: 50px;                /* Size of the skill icons */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+
+.circle {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/* Hover effect to enlarge the icon */
+.ability-icon {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.2s ease-in-out;
+    border: 3px solid #fdfdc8;
+    position: relative;
+    object-fit: cover;
+}
+.ability-icon.selected15 {
+    border: 4px solid #fff307;
+}
+.ability-icon.selected25 {
+    border: 4px solid #056cf1;
+}
+
+/* Hover effect to enlarge the ability icon */
+.ability-icon:hover {
+    transform: scale(1.2); /* Slightly enlarge the icon */
+}
+
+/* Tooltip - hidden by default, shown on hover */
+.skill-tooltip {
+    position: absolute;
+    bottom: 80px;                  /* Position the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;          /* Hide by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 325px;            /* Max width of the tooltip */
+    white-space: normal;         /* Allow the text to wrap and break */
+    word-wrap: break-word;       /* Break words if they're too long */
+    z-index: 1000;
+}
+
+/* Show the tooltip when hovering over an icon */
+.skill:hover .skill-tooltip {
+    visibility: visible;
+    opacity: 1;
+    
+}
+.tooltip:hover .skill-tooltip{
+    visibility: hidden;
+    opacity: 0;
+}
+/* Style for the "Scroll to Top" button */
+.scroll-to-top-btn {
+    position: fixed;             /* Fix the button in place */
+    bottom: 20px;                /* 20px from the bottom of the screen */
+    right: 20px;                 /* 20px from the right of the screen */
+    background-color: #fdfdc8;   /* Light yellow background */
+    color: #333;                 /* Dark text color for visibility */
+    border: none;                /* No border */
+    padding: 10px 15px;          /* Add padding for a larger clickable area */
+    font-size: 20px;             /* Make the arrow larger */
+    border-radius: 5px;          /* Rounded corners */
+    cursor: pointer;            /* Show pointer cursor on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+/* Hover effect to change background color */
+.scroll-to-top-btn:hover {
+    background-color: #ffcd00; /* Change to a darker yellow on hover */
+    transform: scale(1.1);      /* Slightly enlarge the button when hovered */
+}
+
+/* Optional: Hide button when at the top of the page */
+.scroll-to-top-btn.hidden {
+    display: none;
+}
+.video-container {
+    display: flex;               /* Use Flexbox layout */
+    justify-content: space-between; /* Space between videos */
+    align-items: flex-start;     /* Align items to the top */
+    gap: 20px;                   /* Optional: space between the video items */
+}
+
+/* Each video item (video + heading) */
+.video-item {
+    display: flex;
+    flex-direction: column;      /* Stack heading and video vertically */
+    align-items: center;         /* Center the heading and video horizontally */
+}
+
+/* Styling for gear loadout*/
+.gear-wrapper{
+    position: relative;
+    width: 100%;                /* Ensure it takes up the width of its parent */
+    max-width: 500px;           
+    height: 550px;              
+    margin: 0 auto;             /* Center the container */
+    display: grid;    /* Use grid layout */
+    grid-template-columns: repeat(5, 1fr);  /* 8 equal columns */
+    grid-template-rows: repeat(10, 1fr);     /* 8 equal rows */
+    grid-gap: 15px;   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    place-items: center;
+    padding: 5px;
+}
+.weapon-wrapper{
+    position: relative;
+    width: 100%;                /* Ensure it takes up the width of its parent */
+    max-width: 500px;           
+    height: 75px;              
+    margin: 0 auto;             /* Center the container */
+    display: grid;    /* Use grid layout */
+    grid-template-columns: repeat(10, 1fr);  /* 10 equal columns */
+    grid-template-rows: repeat(1, 1fr);     /* 1 equal rows */
+    grid-gap: 15px;   
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    place-items: center;
+    padding: 5px;
+}
+.image-holder{
+    background-image: url('clericImages/gearImage.png');
+    max-width: 500px;
+    height: 650px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.equipment-image {
+    width: 100%;                /* Make the image fill the container width */
+    height: auto;               /* Maintain the image's aspect ratio */
+    display: block;             /* Prevent any extra space around the image */
+}
+
+/* Each equipment icon */
+.equipment {
+    display: flex;               /* Use flexbox for centering */
+    justify-content: center;     /* Horizontally center the icon */
+    align-items: center;         /* Vertically center the icon */
+    position: relative;          /* Ensure tooltip is positioned correctly */
+    width: 50px;                 /* Size of the skill icons */
+    height: 50px;                /* Size of the skill icons */
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    border: 3px solid white;
+}
+.inner-grid{
+    display: grid;
+    position: relative;
+    grid-gap: 15px;
+    place-items: center;
+    grid-template-columns: repeat(10, 1fr);
+}
+.equipment:hover .equipment-tooltip{
+    visibility: visible;
+    opacity: 1;
+}
+.equipment:hover .weapon-tooltip{
+    visibility: visible;
+    opacity: 1;
+}
+.equipment-tooltip {
+    position: absolute;
+    bottom: -200px;                  /* Position the tooltip above the icon */
+    left: 250px;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;          /* Hide by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 325px;            /* Max width of the tooltip */
+    white-space: normal;         /* Allow the text to wrap and break */
+    word-wrap: break-word;       /* Break words if they're too long */
+    z-index: 1000;
+}
+.weapon-tooltip {
+    position: absolute;
+    bottom: 80px;                  /* Position the tooltip above the icon */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;          /* Hide by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    width: 325px;            /* Max width of the tooltip */
+    white-space: normal;         /* Allow the text to wrap and break */
+    word-wrap: break-word;       /* Break words if they're too long */
+    z-index: 1000;
+}
+.container{
+    content: "";
+    display: table;
+    clear: both;
+    width: 100%;
+
+}
+.left{
+    float: left;
+    width: 50%;
+
+}
+.right{
+    float: right;
+    width: 60%;
+}
+
+    </style>
+</head>
+<body>
+    <main>
+        <!-- Buttons to jump to parts of guide  -->
+        <h2>Cleric Class Guide</h2>
+        <nav>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#build">Suggested Build</a></li>
+                <li><a href="#items">Gear & Consumables</a></li>
+                <li><a href="#abilities">Abilities</a></li>
+                <li><a href="#tips">Tips & Tricks</a></li>
+                <li><a href="#talent-calculator">Talent Calculator</a></li>
+
+            </ul>
+        </nav>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>The cleric is a strong support class and the only true healer currently in the game. This guide will be for two very similar builds that will focus on the best of
+                both worlds for single target and AoE heals. The first build is more mana friendly while the later build has more skillful gameplay that can result
+                in strong instant cast combos for easy life saving moments, or strong moments of burst and crowd control. 
+            </p>
+        </section>
+
+        <section id="build">
+            <h2>Suggested Builds</h2>
+            <p1></p1>
+            
+            <!-- Buttons to switch between builds, if more builds are added, copy format below -->
+            <ul class="build-buttons">
+                <li><button class="build-button" data-build="mana">Essence Infusion</button></li>
+                <li><button class="build-button" data-build="instant">Divine Infusion</button></li>
+            </ul>
+
+                <!-- Essence Infusion build contents -->
+                <div class="build-section" id="mana" style="display: none;">
+                    <h2 style="text-align: center;">Essence Infusion Talents</h2>
+
+                    <!-- Main container for the skill tree image -->
+                    <div class="skilltree-wrapper">
+                        <!-- Skill icons placed in grid cells, true center is 9,9-->
+                        <div class="skill" style="grid-column: 9; grid-row: 15;">
+                            <img src="clericImages/infusion.png" alt="EssenceInfusion" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Essence Infusion &emsp; &emsp; &emsp; Toggled Ability<br><br> 
+                                While active, your spells consume Divine Power instead of mana or health.</div>
+                        </div>
+                <!-- Row 14 skills -->
+                        <div class="skill" style="grid-column: 9; grid-row: 14;">
+                            <img src="clericImages/judgment.png" alt="Judgment" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Judgment &emsp; &emsp; &emsp; &emsp; 18s Cooldown<br>
+                            30m Range &emsp; &emsp; &emsp; &emsp; 4.2s Cast<br><br>
+                        If cast on an ally, restore health equal to 1500% healing power.<br>
+                    If cast on an enemy deal 280% magic power radiant damage and apply burning. If the target is Shaken, the caster is healed for the damage dealt.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 8; grid-row: 14;">
+                            <img src="clericImages/resplendentBeam.png" alt="Resplendent Beam" class="ability-icon selected25">
+                            <div class="skill-tooltip">Resplendent Beam &emsp; &emsp; 20s Cooldown<br>
+                            30m Range &emsp; &emsp; &emsp; &emsp; &emsp; 1.4s cast<br><br>
+                        Fire a beam of healing energy towards target ally. Charging this spell allows the beam to bounce up to 4 additional friendly targets 
+                     closest to the original target. The initial hit heals for 300% healing power and reduces with each bounce.</div>
+                        </div>
+                
+                        <div class="skill" style="grid-column: 10; grid-row: 14;">
+                            <img src="clericImages/healingTouch.png" alt="Healing Touch" class="ability-icon selected25">
+                            <div class="skill-tooltip">Healing Touch &emsp; &emsp; &emsp; &emsp; 25s Cooldown<br>
+                            4m Range &emsp; &emsp; &emsp; &emsp; &emsp; Instant Cast<br><br>
+                        Heal target in melee range for 500% healing.</div>
+                        </div>
+                
+                        <div class="skill" style="grid-column: 6; grid-row: 14;">
+                            <img src="clericImages/mend.png" alt="Plentiful Mend" class="ability-icon circle">
+                            <div class="skill-tooltip">Plentiful Mend<br><br>
+                            Mend has two additional charges.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 12; grid-row: 14;">
+                            <img src="clericImages/mend.png" alt="Escalating Mend" class="ability-icon circle">
+                            <div class="skill-tooltip">Escalating Mend<br><br>
+                            Mend's healing is increased each time it is used in quick succession.</div>
+                        </div>
+                <!-- Row 13 skills -->
+                        <div class="skill" style="grid-column: 9; grid-row: 13;">
+                            <img src="clericImages/flashCure.png" alt="Flash Cure" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Flash Cure &emsp; &emsp; &emsp; &emsp; 6s Cooldown<br>
+                            30m Range &emsp; 3 Charges &emsp; 4.2s Cast<br><br>
+                        Instantly heal ally target for 250% healing. This may be used during other abilities.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 8; grid-row: 13;">
+                            <img src="clericImages/deliverance.png" alt="Deliverance" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Deliverance<br>
+                            30m Range &emsp; &emsp; &emsp; &emsp;  3.7s Cast<br><br>
+                            Charge up healing energy that heals a target ally upon release, scaling in power the longer it is charged, up to 1000% healing.
+                        </div>
+                        </div>
+                        <div class="skill" style="grid-column: 10; grid-row: 13;">
+                            <img src="clericImages/soothingGlow.png" alt="Soothing Glow" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Soothing Glow &emsp; &emsp; &emsp; 8s Cooldown<br>
+                            30m Range &emsp; 2 Charges &emsp; Instant Cast<br><br>
+                        Heal for 60% healing every seconds, lasts 8 seconds.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 12; grid-row: 13;">
+                            <img src="clericImages/soothingGlow.png" alt="Abundent Soothing Glow" class="ability-icon circle" >
+                            <div class="skill-tooltip">Abundent Soothing Glow<br><br>
+                            Soothing glow has an aditional charge.<br>
+                        Casting soothing glow on a target already under its effect extends its duration by its base duration.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 6; grid-row: 13;">
+                            <img src="clericImages/deliverance.png" alt="Redemptive Deliverance" class="ability-icon circle selected25" >
+                            <div class="skill-tooltip">Redemptive Deliverance<br><br>
+                            Deliverance heals more based on the missing health percentage of the target.</div>
+                        </div>
+
+                <!-- Row 11 skills -->
+                        <div class="skill" style="grid-column: 9; grid-row: 11;">
+                            <img src="clericImages/blessWeapon.png" alt="Bless Weapon" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Bless Weapon<br>
+                                30m Range &emsp; &emsp; &emsp; &emsp; &emsp; 1s Cast<br><br>
+                            Imbue your target's weapon with radiant light, granting them Bless Weapon. Weapon combo finishers deal an additional 5% radiant damage
+                            and apply Bless Weapon: Mana Regen<br>
+                            Bless Weapon: Mana Regen -Regenerate mana ever 1.5 seconds. Last 6 seconds per application up to 15 seconds.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 6; grid-row: 11;">
+                            <img src="clericImages/blessWeapon.png" alt="Bountiful Bless Weapon" class="ability-icon circle selected15" >
+                            <div class="skill-tooltip">Bountiful Bless Weapon<br><br>
+                            Whenever an ally attacks whose weapon you have blessed, you also gain Bless Weapon: Mana Regen</div>
+                        </div>
+                        <div class="skill" style="grid-column: 12; grid-row: 11;">
+                            <img src="clericImages/blessWeapon.png" alt="Righteous Blessed Weapon" class="ability-icon circle selected25" >
+                            <div class="skill-tooltip">Righteous Bless Weapon<br><br>
+                            While Bless Weapon is active, weapon attacks have a 20% chance to proc an additional 20% radiant damage and apply burning.</div>
+                        </div>
+                <!-- Row 10 skills  -->
+                        <div class="skill" style="grid-column: 6; grid-row: 10;">
+                            <img src="clericImages/divineFlare.png" alt="Divine Retribution" class="ability-icon selected15 circle" >
+                            <div class="skill-tooltip">Divine Retribution &emsp;<br><br>
+                            Divine Flare deals 250% radiant damage an applies Silenced to enemies within its area of effect when it detonates.
+                            Damage is divided amoungst targets hit.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 8; grid-row: 10;">
+                            <img src="clericImages/purify.png" alt="Purify" class="ability-icon selected25" >
+                            <div class="skill-tooltip">Purify<br>
+                                30m Range &emsp; &emsp; &emsp; &emsp; &emsp;  Instant Cast <br>
+                            Remove up to 3 dispellable debuffs from an ally.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 9; grid-row: 10;">
+                            <img src="clericImages/defiantLight.png" alt="Defiant Light" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Defiant Light &emsp; &emsp; &emsp; &emsp; 30s Cooldown<br>
+                                30m Range &emsp;  &emsp;  &emsp; &emsp; Instant Cast  <br>
+                            Heal target ally for 50% of their max health over 10 seconds. If they would recieve fatal damage during this time the effect is consumed and
+                            they are instead healed for 25% of their max health. </div>
+                        </div>
+                        <div class="skill" style="grid-column: 10; grid-row: 10;">
+                            <img src="clericImages/barrier.png" alt="Barrier" class="ability-icon selected25" >
+                            <div class="skill-tooltip">Barrier &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 10s Cooldown<br>
+                                30m Range &emsp; &emsp; &emsp; &emsp; &emsp; Instant Cast <br><br>
+                            Sacrifice 25% of your max health and apply that much temporary health to a target ally for 10 seconds. Does not stack.</div>
+                            </div>
+                <!-- Row 9 skills  -->
+                            <div class="skill" style="grid-column: 8; grid-row: 9;">
+                                <img src="clericImages/divineFlare.png" alt="Devine Flare" class="ability-icon selected15" >
+                                <div class="skill-tooltip">Devine Flare &emsp; &emsp; &emsp; &emsp; 15s Cooldown<br>
+                                    30m Range &emsp;  &emsp;  &emsp; &emsp; &emsp; Instant Cast  <br>
+                                Place a targeted area of effect on the ground that heals all targets after several seconds. Heals for 1000% healing divided amoungst each target.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 9; grid-row: 9;">
+                                <img src="clericImages/condemn.png" alt="Condemn" class="ability-icon selected15" >
+                                <div class="skill-tooltip">Condemn &emsp; &emsp; &emsp; &emsp; &emsp; 30s Cooldown<br>
+                                    30m Range &emsp;  &emsp;  &emsp; &emsp; &emsp; 1.8s Cast  <br>
+                                Apply Incapcitated for 10 seconds to enemy target. If target is Conflagurating, target becomes stunned for 4 seconds instead.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 10; grid-row: 9;">
+                                <img src="clericImages/consecratingWave.png" alt="Consecrating Wave" class="ability-icon selected15" >
+                                <div class="skill-tooltip">Consecrating Wave &emsp; &emsp;  18s Cooldown<br>
+                                    20m Range &emsp;  &emsp;  &emsp; &emsp; &emsp; Instant Cast<br>
+                                    Send forth a wave of radiance that deals 150% radiant damage and applies Volatile to all enemies in front of you.<br>
+                                    Dispell 1 buff from each target hit that is silenced.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 12; grid-row: 9;">
+                                <img src="clericImages/consecratingWave.png" alt="Restorative Consecrating Wave" class="ability-icon selected15" >
+                                <div class="skill-tooltip">Restorative Consecrating Wave<br>
+                                   Consecrating Wave additionally heals you and up to 10 allies for 250% healing.</div>
+                            </div>
+                <!-- Row 8 skills  -->
+                            <div class="skill" style="grid-column: 6; grid-row: 8;">
+                                <img src="clericImages/divineFlare.png" alt="Divine Protection" class="ability-icon circle" >
+                                <div class="skill-tooltip">Divine Protection<br>
+                                    Divine Flare applies Divine Protection to allies inside of its area of effect before detonation.<br>
+                                Divine Protection - Magical Mitigation increased by 50% for 5 seconds.</div>
+                            </div>
+                    <!-- Row 6 skills  -->
+                            <div class="skill" style="grid-column: 6; grid-row: 6;">
+                                <img src="clericImages/wingsofSalvation.png" alt="Unyielding Wings of Salvation" class="ability-icon circle selected25" >
+                                <div class="skill-tooltip">Unyielding Wings of Salvation<br>
+                                    Wings of Salvation breaks all disabling effects on the caster.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 8; grid-row: 6;">
+                                <img src="clericImages/wingsofSalvation.png" alt="Wings of Salvation" class="ability-icon selected15" >
+                                <div class="skill-tooltip">Wings of Salvation &emsp; 30s Cooldown<br>
+                                    30m Range &emsp; &emsp; &emsp; &emsp; &emsp; Instant Cast<br>
+                                    Sprout phoenix-like wings and dash to the target ally, granting Wings of Salvation to the caster and target on arivial.<br>
+                                    Wings of Salvation - Gain a shield for 250% magic power.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 9; grid-row: 6;">
+                                <img src="clericImages/communalRestoration.png" alt="Communal Restoration" class="ability-icon selected15" >
+                                <div class="skill-tooltip">Communal Restoration &emsp; 10s Cooldown<br>
+                                    30m Range &emsp; &emsp; &emsp; 2.3s Cast<br>
+                                    Restore health equal to 150% healing to all party memebers in range and apply Communal Restoration.<br>
+                                    Communal Restoration - apply a shield for 10% of targets max health and heal for 30% healing every second for 6 seconds.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 10; grid-row: 6;">
+                                <img src="clericImages/chainsofRestraint.png" alt="Chains of Restraint" class="ability-icon selected25" >
+                                <div class="skill-tooltip">Chains of Restraint &emsp; &emsp; &emsp; 30s Cooldown<br>
+                                    30m Range &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  2.1s Cast<br>
+                                    Conjure a circle of radiant chains at target location for 8 seconds that deal 40% radiant damage every second and applies Snared to targets within area.<br>
+                                    Each Weakened target hit by the initial pulse becomes rooted.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 12; grid-row: 6;">
+                                <img src="clericImages/chainsofRestraint.png" alt="Binding Chains of Restraint" class="ability-icon circle selected25" >
+                                <div class="skill-tooltip">Binding Chains of Restraint<br>
+                                    Chains of Restraint's final tick applies stunned for 3 seconds.</div>
+                            </div>
+                           
+                </div>
+                <h2>Talent Order:</h2>
+                <p><strong>Up to level 15:</strong><br>1. Essence Infusion &emsp; 2. Flash Cure &emsp; 3. Soothing Glow &emsp; 4. Judgment &emsp; 5. Bless Weapon &emsp; 6. Bountiful Bless Weapon
+                    7. Defiant Light &emsp; 8. Consecrating Wave &emsp; 9. Restorative Consecrating Wave <br> 10. Condemn &emsp; 11. Communal Restoration &emsp; 12. Wings of Salvation
+                    13. Divine Flare &emsp; 14. Divine Retribution </p>
+                <p><strong>To level 25:</strong><br>
+                15. Unyielding Wings of Salvation &emsp; 16. Deliverance &emsp; 17. Chains of Restraint &emsp; 18. Binding Chains of Restraint &emsp; 19. Purify &emsp; 20. Redemptive Deliverance
+                21. Healing Touch &emsp; 22. Barrier &emsp;<br> 23. Resplendent Beam &emsp; 24. Righteous Blessed Weapon</p>
+                <p>Note: You will notice that the only difference in build is which infusion you take. Right now this is the only choice node cleric has so it
+                    is the only spell you change. Essence Infusion should be taken if you are really struggling with mana or just hate using Divine Infusion
+                </p>
+                </div>
+                <!-- Divine Infusion build contents -->
+                <div class="build-section" id="instant" style="display:none;">
+                    <h2 style="text-align: center;">Divine Infusion Talents</h2>
+
+                    <!-- Main container for the skill tree image -->
+                    <div class="skilltree-wrapper">
+                        <!-- Skill icons placed in grid cells, true center is 9,9-->
+                        <div class="skill" style="grid-column: 9; grid-row: 15;">
+                            <img src="clericImages/infusion.png" alt="Divine Infusion" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Divine Infusion &emsp; &emsp; &emsp; Toggled Ability<br><br> 
+                                Consume Divine Power to instantly complete the remaining cast time of any spell currently being cast.</div>
+                        </div>
+                <!-- Row 14 skills -->
+                        <div class="skill" style="grid-column: 9; grid-row: 14;">
+                            <img src="clericImages/judgment.png" alt="Judgment" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Judgment &emsp; &emsp; &emsp; &emsp; 18s Cooldown<br>
+                            30m Range &emsp; &emsp; &emsp; &emsp; 4.2s Cast<br><br>
+                        If cast on an ally, restore health equal to 1500% healing power.<br>
+                    If cast on an enemy deal 280% magic power radiant damage and apply burning. If the target is Shaken, the caster is healed for the damage dealt.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 8; grid-row: 14;">
+                            <img src="clericImages/resplendentBeam.png" alt="Resplendent Beam" class="ability-icon selected25">
+                            <div class="skill-tooltip">Resplendent Beam &emsp; &emsp; 20s Cooldown<br>
+                            30m Range &emsp; &emsp; &emsp; &emsp; &emsp; 1.4s cast<br><br>
+                        Fire a beam of healing energy towards target ally. Charging this spell allows the beam to bounce up to 4 additional friendly targets 
+                     closest to the original target. The initial hit heals for 300% healing power and reduces with each bounce.</div>
+                        </div>
+                
+                        <div class="skill" style="grid-column: 10; grid-row: 14;">
+                            <img src="clericImages/healingTouch.png" alt="Healing Touch" class="ability-icon selected25">
+                            <div class="skill-tooltip">Healing Touch &emsp; &emsp; &emsp; &emsp; 25s Cooldown<br>
+                            4m Range &emsp; &emsp; &emsp; &emsp; &emsp; Instant Cast<br><br>
+                        Heal target in melee range for 500% healing.</div>
+                        </div>
+                
+                        <div class="skill" style="grid-column: 6; grid-row: 14;">
+                            <img src="clericImages/mend.png" alt="Plentiful Mend" class="ability-icon circle">
+                            <div class="skill-tooltip">Plentiful Mend<br><br>
+                            Mend has two additional charges.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 12; grid-row: 14;">
+                            <img src="clericImages/mend.png" alt="Escalating Mend" class="ability-icon circle">
+                            <div class="skill-tooltip">Escalating Mend<br><br>
+                            Mend's healing is increased each time it is used in quick succession.</div>
+                        </div>
+                <!-- Row 13 skills -->
+                        <div class="skill" style="grid-column: 9; grid-row: 13;">
+                            <img src="clericImages/flashCure.png" alt="Flash Cure" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Flash Cure &emsp; &emsp; &emsp; &emsp; 6s Cooldown<br>
+                            30m Range &emsp; 3 Charges &emsp; 4.2s Cast<br><br>
+                        Instantly heal ally target for 250% healing. This may be used during other abilities.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 8; grid-row: 13;">
+                            <img src="clericImages/deliverance.png" alt="Deliverance" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Deliverance<br>
+                            30m Range &emsp; &emsp; &emsp; &emsp;  3.7s Cast<br><br>
+                            Charge up healing energy that heals a target ally upon release, scaling in power the longer it is charged, up to 1000% healing.
+                        </div>
+                        </div>
+                        <div class="skill" style="grid-column: 10; grid-row: 13;">
+                            <img src="clericImages/soothingGlow.png" alt="Soothing Glow" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Soothing Glow &emsp; &emsp; &emsp; 8s Cooldown<br>
+                            30m Range &emsp; 2 Charges &emsp; Instant Cast<br><br>
+                        Heal for 60% healing every seconds, lasts 8 seconds.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 12; grid-row: 13;">
+                            <img src="clericImages/soothingGlow.png" alt="Abundent Soothing Glow" class="ability-icon circle" >
+                            <div class="skill-tooltip">Abundent Soothing Glow<br><br>
+                            Soothing glow has an aditional charge.<br>
+                        Casting soothing glow on a target already under its effect extends its duration by its base duration.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 6; grid-row: 13;">
+                            <img src="clericImages/deliverance.png" alt="Redemptive Deliverance" class="ability-icon circle selected25" >
+                            <div class="skill-tooltip">Redemptive Deliverance<br><br>
+                            Deliverance heals more based on the missing health percentage of the target.</div>
+                        </div>
+
+                <!-- Row 11 skills -->
+                        <div class="skill" style="grid-column: 9; grid-row: 11;">
+                            <img src="clericImages/blessWeapon.png" alt="Bless Weapon" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Bless Weapon<br>
+                                30m Range &emsp; &emsp; &emsp; &emsp; &emsp; 1s Cast<br><br>
+                            Imbue your target's weapon with radiant light, granting them Bless Weapon. Weapon combo finishers deal an additional 5% radiant damage
+                            and apply Bless Weapon: Mana Regen<br>
+                            Bless Weapon: Mana Regen -Regenerate mana ever 1.5 seconds. Last 6 seconds per application up to 15 seconds.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 6; grid-row: 11;">
+                            <img src="clericImages/blessWeapon.png" alt="Bountiful Bless Weapon" class="ability-icon circle selected15" >
+                            <div class="skill-tooltip">Bountiful Bless Weapon<br><br>
+                            Whenever an ally attacks whose weapon you have blessed, you also gain Bless Weapon: Mana Regen</div>
+                        </div>
+                        <div class="skill" style="grid-column: 12; grid-row: 11;">
+                            <img src="clericImages/blessWeapon.png" alt="Righteous Blessed Weapon" class="ability-icon circle selected25" >
+                            <div class="skill-tooltip">Righteous Bless Weapon<br><br>
+                            While Bless Weapon is active, weapon attacks have a 20% chance to proc an additional 20% radiant damage and apply burning.</div>
+                        </div>
+                <!-- Row 10 skills  -->
+                        <div class="skill" style="grid-column: 6; grid-row: 10;">
+                            <img src="clericImages/divineFlare.png" alt="Divine Retribution" class="ability-icon selected15 circle" >
+                            <div class="skill-tooltip">Divine Retribution &emsp;<br><br>
+                            Divine Flare deals 250% radiant damage an applies Silenced to enemies within its area of effect when it detonates.
+                            Damage is divided amoungst targets hit.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 8; grid-row: 10;">
+                            <img src="clericImages/purify.png" alt="Purify" class="ability-icon selected25" >
+                            <div class="skill-tooltip">Purify<br>
+                                30m Range &emsp; &emsp; &emsp; &emsp; &emsp;  Instant Cast <br>
+                            Remove up to 3 dispellable debuffs from an ally.</div>
+                        </div>
+                        <div class="skill" style="grid-column: 9; grid-row: 10;">
+                            <img src="clericImages/defiantLight.png" alt="Defiant Light" class="ability-icon selected15" >
+                            <div class="skill-tooltip">Defiant Light &emsp; &emsp; &emsp; &emsp; 30s Cooldown<br>
+                                30m Range &emsp;  &emsp;  &emsp; &emsp; Instant Cast  <br>
+                            Heal target ally for 50% of their max health over 10 seconds. If they would recieve fatal damage during this time the effect is consumed and
+                            they are instead healed for 25% of their max health. </div>
+                        </div>
+                        <div class="skill" style="grid-column: 10; grid-row: 10;">
+                            <img src="clericImages/barrier.png" alt="Barrier" class="ability-icon selected25" >
+                            <div class="skill-tooltip">Barrier &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; 10s Cooldown<br>
+                                30m Range &emsp; &emsp; &emsp; &emsp; &emsp; Instant Cast <br><br>
+                            Sacrifice 25% of your max health and apply that much temporary health to a target ally for 10 seconds. Does not stack.</div>
+                            </div>
+                <!-- Row 9 skills  -->
+                            <div class="skill" style="grid-column: 8; grid-row: 9;">
+                                <img src="clericImages/divineFlare.png" alt="Devine Flare" class="ability-icon selected15" >
+                                <div class="skill-tooltip">Devine Flare &emsp; &emsp; &emsp; &emsp; 15s Cooldown<br>
+                                    30m Range &emsp;  &emsp;  &emsp; &emsp; &emsp; Instant Cast  <br>
+                                Place a targeted area of effect on the ground that heals all targets after several seconds. Heals for 1000% healing divided amoungst each target.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 9; grid-row: 9;">
+                                <img src="clericImages/condemn.png" alt="Condemn" class="ability-icon selected15" >
+                                <div class="skill-tooltip">Condemn &emsp; &emsp; &emsp; &emsp; &emsp; 30s Cooldown<br>
+                                    30m Range &emsp;  &emsp;  &emsp; &emsp; &emsp; 1.8s Cast  <br>
+                                Apply Incapcitated for 10 seconds to enemy target. If target is Conflagurating, target becomes stunned for 4 seconds instead.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 10; grid-row: 9;">
+                                <img src="clericImages/consecratingWave.png" alt="Consecrating Wave" class="ability-icon selected15" >
+                                <div class="skill-tooltip">Consecrating Wave &emsp; &emsp;  18s Cooldown<br>
+                                    20m Range &emsp;  &emsp;  &emsp; &emsp; &emsp; Instant Cast<br>
+                                    Send forth a wave of radiance that deals 150% radiant damage and applies Volatile to all enemies in front of you.<br>
+                                    Dispell 1 buff from each target hit that is silenced.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 12; grid-row: 9;">
+                                <img src="clericImages/consecratingWave.png" alt="Restorative Consecrating Wave" class="ability-icon selected15" >
+                                <div class="skill-tooltip">Restorative Consecrating Wave<br>
+                                   Consecrating Wave additionally heals you and up to 10 allies for 250% healing.</div>
+                            </div>
+                <!-- Row 8 skills  -->
+                            <div class="skill" style="grid-column: 6; grid-row: 8;">
+                                <img src="clericImages/divineFlare.png" alt="Divine Protection" class="ability-icon circle" >
+                                <div class="skill-tooltip">Divine Protection<br>
+                                    Divine Flare applies Divine Protection to allies inside of its area of effect before detonation.<br>
+                                Divine Protection - Magical Mitigation increased by 50% for 5 seconds.</div>
+                            </div>
+                    <!-- Row 6 skills  -->
+                            <div class="skill" style="grid-column: 6; grid-row: 6;">
+                                <img src="clericImages/wingsofSalvation.png" alt="Unyielding Wings of Salvation" class="ability-icon circle selected25" >
+                                <div class="skill-tooltip">Unyielding Wings of Salvation<br>
+                                    Wings of Salvation breaks all disabling effects on the caster.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 8; grid-row: 6;">
+                                <img src="clericImages/wingsofSalvation.png" alt="Wings of Salvation" class="ability-icon selected15" >
+                                <div class="skill-tooltip">Wings of Salvation &emsp; 30s Cooldown<br>
+                                    30m Range &emsp; &emsp; &emsp; &emsp; &emsp; Instant Cast<br>
+                                    Sprout phoenix-like wings and dash to the target ally, granting Wings of Salvation to the caster and target on arivial.<br>
+                                    Wings of Salvation - Gain a shield for 250% magic power.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 9; grid-row: 6;">
+                                <img src="clericImages/communalRestoration.png" alt="Communal Restoration" class="ability-icon selected15" >
+                                <div class="skill-tooltip">Communal Restoration &emsp; 10s Cooldown<br>
+                                    30m Range &emsp; &emsp; &emsp; 2.3s Cast<br>
+                                    Restore health equal to 150% healing to all party memebers in range and apply Communal Restoration.<br>
+                                    Communal Restoration - apply a shield for 10% of targets max health and heal for 30% healing every second for 6 seconds.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 10; grid-row: 6;">
+                                <img src="clericImages/chainsofRestraint.png" alt="Chains of Restraint" class="ability-icon selected25" >
+                                <div class="skill-tooltip">Chains of Restraint &emsp; &emsp; &emsp; 30s Cooldown<br>
+                                    30m Range &emsp; &emsp; &emsp; &emsp; &emsp; &emsp;  2.1s Cast<br>
+                                    Conjure a circle of radiant chains at target location for 8 seconds that deal 40% radiant damage every second and applies Snared to targets within area.<br>
+                                    Each Weakened target hit by the initial pulse becomes rooted.</div>
+                            </div>
+                            <div class="skill" style="grid-column: 12; grid-row: 6;">
+                                <img src="clericImages/chainsofRestraint.png" alt="Binding Chains of Restraint" class="ability-icon circle selected25" >
+                                <div class="skill-tooltip">Binding Chains of Restraint<br>
+                                    Chains of Restraint's final tick applies stunned for 3 seconds.</div>
+                            </div>
+                </div>
+                <h2>Talent Order:</h2>
+                <p><strong>Up to level 15:</strong><br>1. Essence Infusion &emsp; 2. Flash Cure &emsp; 3. Soothing Glow &emsp; 4. Judgment &emsp; 5. Bless Weapon &emsp; 6. Bountiful Bless Weapon
+                    7. Defiant Light &emsp; 8. Consecrating Wave &emsp; 9. Restorative Consecrating Wave <br> 10. Condemn &emsp; 11. Communal Restoration &emsp; 12. Wings of Salvation
+                    13. Divine Flare &emsp; 14. Divine Retribution </p>
+                <p><strong>To level 25:</strong><br>
+                15. Unyielding Wings of Salvation &emsp; 16. Deliverance &emsp; 17. Chains of Restraint &emsp; 18. Binding Chains of Restraint &emsp; 19. Purify &emsp; 20. Redemptive Deliverance
+                21. Healing Touch &emsp; 22. Barrier &emsp;<br> 23. Resplendent Beam &emsp; 24. Righteous Blessed Weapon</p>
+                <p>Note: You will notice that the only difference in build is which infusion you take. Right now this is the only choice node cleric has so it
+                    is the only spell you change. Divine Infusion is a higher skill cieling but has better emergency throughput and is better at winning 1vX fights.
+                </p>
+            </div>
+        </section>
+
+        <section id="items">
+            <h2>Gear and Consumables</h2>
+            <p><strong>Consumables:</strong><br>Food: Fruit Salad<br>Scroll: Intelligence Scroll</p>
+            <p><strong>Gear:</strong><br>While leveling you should just always prioritize whatever the strongest gear you have available to you. Try to focus on using gear with useful stats like Int/Mentality/Wisdom but anything is better than an empty slot.<br>
+                For weapons you can get away with anything that has magical power on it. The recommended combo would be either a scepter with a focus or shield, or 2h spellsword for you melee slots. For ranged the best weapon skills for cleric come from
+            wand or spellbook, but you can make use of any spellbow as well.</p>
+            <p><strong>Level 25 Gear:</strong></p>
+            <div class="container">
+            <div class="image-holder left">
+                <div class="gear-wrapper">
+                    <div class="equipment" style="grid-column: 1; grid-row: 2;">
+                        <image src="clericImages/bloomHead.png" ></image>
+                        <div class="equipment-tooltip">
+                            <image class="equipment-image"  src="clericImages/bloomHeadStats.png"></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 1; grid-row: 3;">
+                        <image src="clericImages/roseChest.png" ></image>
+                        <div class="equipment-tooltip">
+                            <image class="equipment-image"  src="clericImages/roseChestStats.png"></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 1; grid-row: 4;">
+                        <image src="clericImages/roseWrist.png" ></image>
+                        <div class="equipment-tooltip">
+                            <image class="equipment-image"  src="clericImages/roseWristStats.png"></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 1; grid-row: 5;">
+                        <image src="clericImages/bloomGloves.png" ></image>
+                        <div class="equipment-tooltip">
+                            <image class="equipment-image"  src="clericImages/bloomGlovesStats.png"></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 1; grid-row: 6;">
+                        <image src="clericImages/roseBelt.png" ></image>
+                        <div class="equipment-tooltip">
+                            <image class="equipment-image"  src="clericImages/roseBeltStats.png"></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 1; grid-row: 7;">
+                        <image src="clericImages/rosePants.png" ></image>
+                        <div class="equipment-tooltip">
+                            <image class="equipment-image"  src="clericImages/rosePantsStats.png"></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 1; grid-row: 8;">
+                        <image src="clericImages/roseBoots.png" ></image>
+                        <div class="equipment-tooltip">
+                            <image class="equipment-image"  src="clericImages/roseBootsStats.png"></image>
+                        </div>
+                    </div>
+
+                    <div class="equipment" style="grid-column: 5; grid-row: 2;">
+                        <image src="clericImages/roseShoulder.png" ></image>
+                        <div class="equipment-tooltip">
+                            <image class="equipment-image"  src="clericImages/roseShoulderStats.png"></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 5; grid-row: 3;">
+                        <image src="clericImages/joevaBack.png" ></image>
+                        <div class="equipment-tooltip" >
+                            <image class="equipment-image"  src="clericImages/joevaBackStats.png"></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 5; grid-row: 4;">
+                        <image src="clericImages/steelbloomEar.png" ></image>
+                        <div class="equipment-tooltip" >
+                            <image class="equipment-image"  src="clericImages/steelbloomEarStats.png"></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 5; grid-row: 5;">
+                        <image src="clericImages/steelbloomEar.png" ></image>
+                        <div class="equipment-tooltip" >
+                            <image class="equipment-image"  src="clericImages/steelbloomEarStats.png"></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 5; grid-row: 6;">
+                        <image src="clericImages/saphNeck.png" ></image>
+                        <div class="equipment-tooltip" >
+                            <image class="equipment-image"  src="clericImages/saphNeckStats.png"></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 5; grid-row: 7;">
+                        <image src="clericImages/rivRing.png" ></image>
+                        <div class="equipment-tooltip" >
+                            <image class="equipment-image"  src="clericImages/rivRingStats.png"></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 5; grid-row: 8;">
+                        <image src="clericImages/rivRing.png" ></image>
+                        <div class="equipment-tooltip" >
+                            <image class="equipment-image"  src="clericImages/rivRingStats.png"></image>
+                        </div>
+                    </div>
+                </div>
+                <div class="weapon-wrapper">
+                    <div class="equipment" style="grid-column: 4; grid-row: 1;">
+                        <image src="clericImages/spellsword.png" ></image>
+                        <div class="weapon-tooltip" style="text-align: center;">
+                            <image class="equipment-image" src="clericImages/steelSpellSword.png" ></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 5; grid-row: 1;">
+                        <image src="clericImages/spellsword.png" ></image>
+                        <div class="weapon-tooltip" style="text-align: center;">
+                            <image class="equipment-image" src="clericImages/steelSpellSword.png" ></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 6; grid-row: 1;">
+                        <image src="clericImages/wand.png" ></image>
+                        <div class="weapon-tooltip" style="text-align: center;">
+                            <image class="equipment-image" src="clericImages/wandBriarStats.png" ></image>
+                        </div>
+                    </div>
+                    <div class="equipment" style="grid-column: 7; grid-row: 1;">
+                        <image src="clericImages/focus.png" ></image>
+                        <div class="weapon-tooltip" style="text-align: center;">
+                            <image class="equipment-image" src="clericImages/focusBruinStats.png" ></image>
+                        </div>
+                </div>
+                </div>
+        </div>
+        <div class="right">
+            <h2>Gear Breakdown</h2>
+            <p>The best setup for gear currently found is two pieces of Bloomwarden and six pieces of Rosethorn.<br>
+            This will give you all of the following set bonuses:<br>
+            <li>2% Base Crit Chance</li>
+            <li>2% Movespeed</li>
+            <li>0.2 Stamina Regen</li>
+            <li>2 Mentality</li>
+            <li>7 Armor</li>
+            <li>7 Magic Accuarcy</li>
+            <li>14 Magic Power</li>
+            <li>7 Magic Disable Accuracy</li>
+            <li>2 Intelligence</li>
+            <li>7 Magic Casting Speed</li>
+            <li>7 Magic Crit Chance</li>
+            <li>15 Max Health</li><br>
+            
+            </p>
+            <h2>Stat Priority</h2>
+            <p>The basic stat priority for cleric is:<br><br>
+                <strong>Intelligence > Magic Power/Healing Power > Constitustion > Wisdom = Mentality > Casting Speed</strong></p>
+        </div>>
+    </div>
+        </section>
+
+        <section id="abilities">
+            <h2>Abilities</h2>
+            <ul>
+                <li><strong>Essence Infusion:</strong> Allows you to spend Divine Power instead of mana or health when casting abilities.</li>
+                <li><strong>Divine Infusion:</strong> Allows you to spend Divine Power to instantly finish the cast of an ability.</li>
+                <li><strong>Divine Power:</strong> Class resource that builds from healing or damage. While at high resource levels you chance to crit is increased.</li>
+                <li><strong>Mend:</strong> Launched a slow moving bolt of low healing at target.</li>
+                <li><strong>Resurrect:</strong> Brings ally back from death.</li>
+                <li><strong>Smite:</strong> Deals a small amount of radiant damage, if the target is buring it upgrades the burn to Conflagurate.</li>
+                <li><strong>Judgment:</strong> Can be cast on either an enemy for a moderate amount of damage or on an ally for a very large amount of healing. Causes burning on enemies.</li>
+                <li><strong>Resplendent Beam:</strong> Charged abilty that will heal up to five allies based on charge time.</li>
+                <li><strong>Healing Touch:</strong> Large instant cast heal that must be used at melee range.</li>
+                <li><strong>Flash Cure:</strong> Instant cast spell that heals for a moderate amount. Has three charges.</li>
+                <li><strong>Deliverance:</strong> Charged ability that will up to an extremely large amount based on charge time.</li>
+                <li><strong>Soothing Glow:</strong> Applies a small heal over time to an ally for a moderate amount of time, has two charges.</li>
+                <li><strong>Bless Weapon:</strong> Buff applied to an ally that allows for extra damage and mana regeneration.</li>
+                <li><strong>Defiant Light:</strong> Applies a large heal over time to an ally and applies a cheat death affect for its duration.</li>
+                <li><strong>Barrier:</strong> Sacrafice your own health to apply a shield for the same amount to an ally for a small amount of time.</li>
+                <li><strong>Purify:</strong> Removes up to three debuffs from an ally per cast.</li>
+                <li><strong>Divine Flare:</strong> Places a circle on the ground that errupts for healing and damage split between targets.</li>
+                <li><strong>Condemn:</strong> Applies a long sleep affect on enemies, if target is Conflagurating this is instead a four second stun.</li>
+                <li><strong>Consecrating Wave:</strong> Instant cast ability that causes healing and damage in a cone in front of you.</li>
+                <li><strong>Communal Restoration:</strong> Applies a small heal, a small heal over time and a small shield affect to all party memebers within range.</li>
+                <li><strong>Wings of Salvation:</strong> Dashes you to a target ally.</li>
+                <li><strong>Chains of Restraint:</strong> Places a circle on the ground that ticks for damage over time and applies snared. This can be upgraded to a stun.</li>
+            </ul>
+        </section>
+
+        <section id="tips">
+            <h2>Tips & Tricks</h2>
+            <ul>
+                <li><strong>Positioning is Key:</strong> Make sure to keep youself in a safe spot towards the rear of the group. Wings is your only get out jail free card so make sure you have before trying to push to the front.</li>
+                <li><strong>Cooldown Management:</strong> You have quite a few low cooldown spells. Knowing when things like Wings or Defiant Light are off cooldown is imperative to your survival.</li>
+                <li><strong>Use Buffs Wisely:</strong> Unless you are told to put Bless Weapon on a tank, you should always try to put it on your highest geared mage or ranger.</li>
+                <li><strong>Coordinate with Tanks:</strong> Communicate with your tank to ensure you have proper timing on cooldowns so they don't die to spike damage.</li>
+                <li><strong>Keep an Eye on Mana:</strong> Use mana salves when needed and use your ranged weapon whenever you can. Refreshing from your weapon attacks goes a long way to keeping high mana.</li>
+            </ul>
+            <h1><strong>The Wombo Combo:</strong></h1>
+            <p>Cleric has a decent combo they can pull off for damage when needed. Its not a ton of damage but it can be enough to turn a fight or secure a kill.<br>
+            The combo itself is the same no matter what talents you took, the difference is mainly in the timing. With Divine Infusion you will be able to instantly cast several spells in the combo. You should instant cast Judgment and Condemn if you can.<br>
+        <strong>The combo:</strong> Judgment > Smite > Condemn > Divine Flare > Chains of Restraint > Consecrating Wave </p>
+            <div class="video-container">
+                <div class="video-item">
+                <h1>With Divine Infusion</h1>
+                <video width="640" height="480" controls> 
+                    <source src="clericImages/InstantClericCombo.mp4" type="video/mp4">
+                </video>
+                </div>
+                <div class="video-item">
+                <h1>Without Divine Infusion</h1>
+                <video width="640" height="480" controls> 
+                    <source src="clericImages/ClericCombo.mp4" type="video/mp4">
+                </video>
+                </div>
+        </div>
+        </section>
+
+        <section id="talent-calculator">
+            <h2>Talent Calculator</h2>
+            <p><strong>Disclaimer:</strong> This is a work in progress. For now feel free to make use of AshesCodex for talent calculators.</p>
+        </section>
+        <button class="scroll-to-top-btn" onclick="scrollToTop()">↑</button>
+        <p>Written by Lennox</p>
+        <p>Last updated 11/5/2024</p>
+
+       
+    </main>
+
+    <footer>
+        <p>&copy;2024 Enveus Gaming </p>
+    </footer>
+</body>
+<script>
+    // Wait for the page to fully load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Select all buttons and build sections
+        const buttons = document.querySelectorAll('.build-button');
+        const sections = document.querySelectorAll('.build-section');
+
+        // Add click event listeners to build buttons
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get the build type from the button's data attribute
+                const buildType = this.getAttribute('data-build');
+
+                // Hide all sections
+                sections.forEach(section => {
+                    section.style.display = 'none';
+                });
+
+                // Show the selected build
+                const activeSection = document.getElementById(buildType);
+                if (activeSection) {
+                    activeSection.style.display = 'block';
+                }
+            });
+        });
+    });
+
+    function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Optional: Hide the button when at the top of the page
+window.onscroll = function() {
+    const button = document.querySelector('.scroll-to-top-btn');
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.classList.remove('hidden'); // Show button
+    } else {
+        button.classList.add('hidden'); // Hide button when at top
+    }
+};
+</script>
+</html>
