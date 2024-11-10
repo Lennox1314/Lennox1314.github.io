@@ -58,11 +58,11 @@ const Gear = () => (
             </div>
           </div>
           <div className="equipment" style={{ gridColumn: 1, gridRow: 5 }}>
-            <img src="clericImages/bloomGloves.png" />
+            <img src="clericImages/roseGloves.png" />
             <div className="equipment-tooltip">
               <img
                 className="equipment-image"
-                src="clericImages/bloomGlovesStats.png"
+                src="clericImages/roselovesStats.png"
               />
             </div>
           </div>
@@ -94,11 +94,11 @@ const Gear = () => (
             </div>
           </div>
           <div className="equipment" style={{ gridColumn: 5, gridRow: 2 }}>
-            <img src="clericImages/roseShoulder.png" />
+            <img src="clericImages/bloomShoulder.png" />
             <div className="equipment-tooltip">
               <img
                 className="equipment-image"
-                src="clericImages/roseShoulderStats.png"
+                src="clericImages/bloomShoulderStats.png"
               />
             </div>
           </div>
