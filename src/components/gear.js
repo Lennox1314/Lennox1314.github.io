@@ -159,20 +159,20 @@ const Gear = () => (
         </div>
         <div className="weapon-wrapper">
           <div className="equipment" style={{ gridColumn: 4, gridRow: 1 }}>
-            <img src="clericImages/spellsword.png" />
+            <img src="clericImages/sephScepter.png" />
             <div className="weapon-tooltip" style={{ textAlign: "center" }}>
               <img
                 className="equipment-image"
-                src="clericImages/steelSpellSword.png"
+                src="clericImages/sephScepterStats.png"
               />
             </div>
           </div>
           <div className="equipment" style={{ gridColumn: 5, gridRow: 1 }}>
-            <img src="clericImages/spellsword.png" />
+            <img src="clericImages/focus.png" />
             <div className="weapon-tooltip" style={{ textAlign: "center" }}>
               <img
                 className="equipment-image"
-                src="clericImages/steelSpellSword.png"
+                src="clericImages/nordFocusStats.png"
               />
             </div>
           </div>
@@ -190,7 +190,7 @@ const Gear = () => (
             <div className="weapon-tooltip" style={{ textAlign: "center" }}>
               <img
                 className="equipment-image"
-                src="clericImages/focusBruinStats.png"
+                src="clericImages/nordFocusStats.png"
               />
             </div>
           </div>
@@ -228,6 +228,15 @@ const Gear = () => (
             Intelligence &gt; Magic Power/Healing Power &gt; Constitustion
             &gt; Wisdom = Mentality &gt; Casting Speed
           </strong>
+          <br/>
+        </p>
+        <h2>Boss Gear</h2>
+        <p>There are several pieces of gear that are worth farming as named mobs have relatively short respawns and an okay drop rate on very strong items.<br/>
+        Right now the best two bosses you can farm for late game gear are Nordhorn and Heirophant Amari. They both drop valuable weapons which is where a large majority of your power will come from.       
+        </p>
+        <p>
+          <image className="equipment-image" src="focus.png"></image><br/>
+          <image className="equipment-image" src="sephScepter.png"></image><br/>
         </p>
       </div>
       &gt;
