@@ -73,6 +73,7 @@
   p {
       font-size: 1rem;
       margin-bottom: 20px;
+      text-align: center;
   }
   
   ul {
@@ -190,8 +191,8 @@
   
   h3 {
       font-size: 1.8rem;
-      color: #333;
       margin-bottom: 10px;
+      text-align: center;
   }
   
   ul {
@@ -241,5 +242,14 @@
       display: flex;
       flex-direction: column;      /* Stack heading and video vertically */
       align-items: center;         /* Center the heading and video horizontally */
+  }
+
+  h2::before, h2::after {
+    display: inline-block;
+    content: "";
+    border-top: .2rem solid #999;
+    width: 7rem;
+    margin: 0 2rem;
+    transform: translateY(-.5rem);
   }
   
