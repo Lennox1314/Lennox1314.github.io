@@ -10,9 +10,8 @@ const Gear = () => (
       <br />
       Scroll: Intelligence Scroll
     </p>
-    <p>
-      <strong>Gear:</strong>
-      <br />
+    <h3>Pre Level 25 Gear</h3>
+    <p><br />
       While leveling you should just always prioritize whatever the strongest
       gear you have available to you. Try to focus on using gear with useful
       stats like Int/Mentality/Wisdom but anything is better than an empty
@@ -24,18 +23,17 @@ const Gear = () => (
       for cleric come from wand or spellbook, but you can make use of any
       spellbow as well.
     </p>
-    <p>
-      <strong>Level 25 Gear:</strong>
-    </p>
+    <h3>Level 25 Gear</h3>
+    <p>***Note*** Best in slot gear is quickly changing so armor may be partially innacurate. I will try to keep as up to date as possible.</p>
     <div className="container">
       <div className="image-holder left">
         <div className="gear-wrapper">
           <div className="equipment" style={{ gridColumn: 1, gridRow: 2 }}>
-            <img src="clericImages/bloomHead.png" />
+            <img src="clericImages/shadeHelm.png" />
             <div className="equipment-tooltip">
               <img
                 className="equipment-image"
-                src="clericImages/bloomHeadStats.png"
+                src="clericImages/shadeHelmStats.png"
               />
             </div>
           </div>
@@ -49,47 +47,47 @@ const Gear = () => (
             </div>
           </div>
           <div className="equipment" style={{ gridColumn: 1, gridRow: 4 }}>
-            <img src="clericImages/roseWrist.png" />
+            <img src="clericImages/seekerCuffs.png" />
             <div className="equipment-tooltip">
               <img
                 className="equipment-image"
-                src="clericImages/roseWristStats.png"
+                src="clericImages/seekerCuffsStats.png"
               />
             </div>
           </div>
           <div className="equipment" style={{ gridColumn: 1, gridRow: 5 }}>
-            <img src="clericImages/roseGloves.png" />
+            <img src="clericImages/spiderGloves.png" />
             <div className="equipment-tooltip">
               <img
                 className="equipment-image"
-                src="clericImages/roselovesStats.png"
+                src="clericImages/spiderGlovesStats.png"
               />
             </div>
           </div>
           <div className="equipment" style={{ gridColumn: 1, gridRow: 6 }}>
-            <img src="clericImages/roseBelt.png" />
+            <img src="clericImages/ocularBelt.png" />
             <div className="equipment-tooltip">
               <img
                 className="equipment-image"
-                src="clericImages/roseBeltStats.png"
+                src="clericImages/ocularBeltStats.png"
               />
             </div>
           </div>
           <div className="equipment" style={{ gridColumn: 1, gridRow: 7 }}>
-            <img src="clericImages/rosePants.png" />
+            <img src="clericImages/terrorgoreLegs.png" />
             <div className="equipment-tooltip">
               <img
                 className="equipment-image"
-                src="clericImages/rosePantsStats.png"
+                src="clericImages/terrorgoreLegsStats.png"
               />
             </div>
           </div>
           <div className="equipment" style={{ gridColumn: 1, gridRow: 8 }}>
-            <img src="clericImages/roseBoots.png" />
+            <img src="clericImages/dustyShoes.png" />
             <div className="equipment-tooltip">
               <img
                 className="equipment-image"
-                src="clericImages/roseBootsStats.png"
+                src="clericImages/dustyShoesStats.png"
               />
             </div>
           </div>
@@ -112,29 +110,20 @@ const Gear = () => (
             </div>
           </div>
           <div className="equipment" style={{ gridColumn: 5, gridRow: 4 }}>
-            <img src="clericImages/steelbloomEar.png" />
+            <img src="clericImages/saphEar.png" />
             <div className="equipment-tooltip">
               <img
                 className="equipment-image"
-                src="clericImages/steelbloomEarStats.png"
+                src="clericImages/saphEarStats.png"
               />
             </div>
           </div>
           <div className="equipment" style={{ gridColumn: 5, gridRow: 5 }}>
-            <img src="clericImages/steelbloomEar.png" />
+            <img src="clericImages/saphEar.png" />
             <div className="equipment-tooltip">
               <img
                 className="equipment-image"
-                src="clericImages/steelbloomEarStats.png"
-              />
-            </div>
-          </div>
-          <div className="equipment" style={{ gridColumn: 5, gridRow: 6 }}>
-            <img src="clericImages/saphNeck.png" />
-            <div className="equipment-tooltip">
-              <img
-                className="equipment-image"
-                src="clericImages/saphNeckStats.png"
+                src="clericImages/saphEarStats.png"
               />
             </div>
           </div>
@@ -144,6 +133,15 @@ const Gear = () => (
               <img
                 className="equipment-image"
                 src="clericImages/rivRingStats.png"
+              />
+            </div>
+          </div>
+          <div className="equipment" style={{ gridColumn: 5, gridRow: 6 }}>
+            <img src="clericImages/saphNeck.png" />
+            <div className="equipment-tooltip">
+              <img
+                className="equipment-image"
+                src="clericImages/saphNeckStats.png"
               />
             </div>
           </div>
@@ -197,29 +195,22 @@ const Gear = () => (
         </div>
       </div>
       <div className="right">
-        <h2>Gear Breakdown</h2>
-        <p>
-          The best setup for gear currently found is two pieces of Bloomwarden
-          and six pieces of Rosethorn.
-          <br />
-          This will give you all of the following set bonuses:
-          <br />
+        <h3>Gear Breakdown</h3>
+        <p>This is the equipment that will net you the highest intelligence/magic power possible. Currently higher healing beats out higher constitution but if you would like to be more
+          tanky then feel free to swap some pieces out for gear with constitution. Right now with this gear you will wind up with approximetly these offensive stats from the gear:<br/>
+          <strong>***Note*** This is assuming lowest rolls on gear for consistency. You will likely have significantly higher stats</strong>
         </p>
-        <li>2% Base Crit Chance</li>
-        <li>2% Movespeed</li>
-        <li>0.2 Stamina Regen</li>
-        <li>2 Mentality</li>
-        <li>7 Armor</li>
-        <li>7 Magic Accuarcy</li>
-        <li>14 Magic Power</li>
-        <li>7 Magic Disable Accuracy</li>
-        <li>2 Intelligence</li>
-        <li>7 Magic Casting Speed</li>
-        <li>7 Magic Crit Chance</li>
-        <li>15 Max Health</li>
-        <br />
-        <p />
-        <h2>Stat Priority</h2>
+        <li>Intelligence: 74 </li>
+        <li>Wisdom: 20</li>
+        <li>Mentality: 14</li>
+        <li>Magic Power: 949</li>
+        <li>Healing Power: 989</li>
+        <li>Casting Speed: 302</li>
+        <li>Magic Pen: 10</li>
+        <li>Magic Crit: 5</li>
+        
+         
+        <h3>Stat Priority</h3>
         <p>
           The basic stat priority for cleric is:
           <br />
@@ -230,17 +221,80 @@ const Gear = () => (
           </strong>
           <br/>
         </p>
-        <h2>Boss Gear</h2>
+        
+      </div>
+    </div>
+    <br/>
+    <div>
+        <h2>Gear Locations</h2><br/>
+        <h3>Boss Gear</h3>
         <p>There are several pieces of gear that are worth farming as named mobs have relatively short respawns and an okay drop rate on very strong items.<br/>
         Right now the best two bosses you can farm for late game gear are Nordhorn and Heirophant Amari. They both drop valuable weapons which is where a large majority of your power will come from.       
         </p>
-        <p>
-          <image className="equipment-image" src="focus.png"></image><br/>
-          <image className="equipment-image" src="sephScepter.png"></image><br/>
+        <div className="gear-container">
+        <img src="clericImages/nordFocusStats.png" />
+        <div className="location-container">
+          <img className="location-img" src="clericImages/nordLocation.png" />
+          <p className="centered-text">Ursine Caves</p>
+        </div>
+        </div><br/>
+        <div className="gear-container">
+        <img src="clericImages/sephScepterStats.png" />
+        <div className="location-container">
+          <img className="location-img" src="clericImages/amariLocation.png" />
+          <p className="centered-text">Remnants of Sephillion</p>
+        </div>
+        </div><br/>
+        <div className="gear-container">
+        <img src="clericImages/shadeHelmStats.png" />
+        <div className="location-container">
+          <img className="location-img" src="clericImages/zonLocation.png" />
+          <p className="centered-text">Gravepeak</p>
+        </div>
+        </div><br/>
+        <div className="gear-container">
+        <img src="clericImages/terrorgoreLegsStats.png" />
+        <div className="location-container">
+          {/* Need to get location image still */}
+          <p>This drops from a mob named Garumart. We are still looking for him so if you see him please inform a scribe. Until he is found please use Bloom Warden Pants instead.</p>
+        </div>
+        </div><br/>
+        <div className="gear-container">
+        <img src="clericImages/dustyShoesStats.png" />
+        <div className="location-container">
+          <img className="location-img" src="clericImages/sweeperLocation.png" />
+          <p className="centered-text">Wreckage of Carphin<br/>***Note*** This location is not 100% confirmed</p>
+        </div>
+        </div><br/>
+        <div className="gear-container">
+        <img src="clericImages/seekerCuffsStats.png" />
+        <div className="location-container">
+          {/* Need to get location image still */}
+          <p>We are still looking for this piece of gear. It should come from a named mob. If you find it please inform a scribe. In the meantime please wear something like Rosethorn Bracers.</p>
+        </div>
+        </div><br/>
+        <div className="gear-container">
+        <img src="clericImages/ocularBeltStats.png" />
+        <div className="location-container">
+          {/* Need to get location image still */}
+          <p>We are still looking for this piece of gear. It should come from a named mob, possibly named "Zom". If you find it please inform a scribe. In the meantime please wear something like Rosethorn Waistguard.</p>
+        </div>
+        </div><br/>
+        <h3>Normal Mob Drops</h3><br/>
+        <p>You will need to farm several differnt types of mobs to collect all of your gear or have it crafted for you.<br/></p>
+        <li><strong>Bloom Warden: </strong>This drops from the clerics in Steelbloom</li>
+        <li><strong>Rosethorn: </strong>This drops from the firestarters in Steelbloom</li>
+        <li><strong>Sapphire Jewelry: </strong>These drop from minotaurs</li>
+        <li><strong>Rividium Jewelry: </strong>These drop from goblins</li><br/>
+        <h3>Other Gear</h3><br/>
+        <div className="gear-container">
+        <img src="clericImages/joevaBackStats.png" />
+        <p style={{ marginLeft: "200px"}}>This cloak is gained from being a citizen of Joeva. Currently this is the main city Enveus is going to focus on owning so you should always have access to it.
+          This is bought with node currency that you recieve from doing mayoral commissions. It costs 155 currency so plan on this taking a good amount of time to get.
         </p>
-      </div>
-      &gt;
-    </div>
+        </div>
+
+        </div>
     </>
 );
 
