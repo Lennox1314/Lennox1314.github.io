@@ -78,14 +78,18 @@ if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       </ul>
     </nav>
     <section id="overview">
-      <h2>Overview</h2>
+      <div className='sectionHeader'>
+      <h2 className='heading'>Overview</h2>
+      </div>
       <p>
         The cleric is a strong support class and the only true healer currently
         in the game. This guide will be for two very similar builds that will
         focus on the best of both worlds for single target and AoE heals. The
         first build is more mana friendly while the later build has more
         skillful gameplay that can result in strong instant cast combos for easy
-        life saving moments, or strong moments of burst and crowd control.
+        life saving moments, or strong moments of burst and crowd control.<br/>
+        Cleric's want to maximize their magic and healing power. This will come mostly from weapons
+        but you should always strive to have intellect on as much gear as possible.
       </p>
     </section>
     <section id="build">
@@ -130,7 +134,7 @@ if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
       ↑
     </button>
     <p>Written by Lennox</p>
-    <p>Last updated 11/5/2024</p>
+    <p>Last updated 11/12/2024</p>
   </main>
   <footer>
     <p>©2024 Enveus Gaming </p>
