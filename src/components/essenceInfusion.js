@@ -251,7 +251,7 @@ const EssenceInfusion = () => (
             <div className="skill-tooltip">
               Purify
               <br />
-              30m Range           Instant Cast <br />
+              30m Range           1.6s Cast <br />
               Remove up to 3 dispellable debuffs from an ally.
             </div>
           </div>
